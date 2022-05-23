@@ -1,16 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 
-ReactDOM.createRoot(
-  <App />,
+const Test1 = (<div>
+  <h1>Decumanus</h1>
+  <p>Hola React</p>
+</div>
+);
+
+
+function Contenido(props) {
+  return (
+    <div>
+      <h1>{props.titulo}</h1>
+      <p>{props.contenido}</p>
+    </div>
+);
+}
+
+ReactDOM.render(
+  <Contenido titulo="Decumanus atr" contenido="Hola React1" />,
   document.getElementById('root')
 );
 
-  
-  
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
