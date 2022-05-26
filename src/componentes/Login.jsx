@@ -10,8 +10,9 @@ const navigate = useNavigate()
 
   return (
     <div class="Login">
-      <div class="Logincontainer">
-        <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      {/* <div class="Logincontainer"> */}
+      <div class="Logincontainer flex items-center justify-center bg-white rounded-xl h-80 w-80 lg:h-96 lg:w-96">
+        <div class="min-h-full min-w-full flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
           <div class="max-w-md w-full space-y-8">
             <div>
               <img
