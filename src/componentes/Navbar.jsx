@@ -7,7 +7,7 @@ export function Navbar() {
   <nav className='flex justify-between items-center h-16 bg-blue-300 text-black relative shadow-sm'>
 
         <Link to="/" className='pl-8'>
-            Logo
+            Log
         </Link>
         
         <div className='flex justify-between items-center pr-20 cursor-pointer'>
