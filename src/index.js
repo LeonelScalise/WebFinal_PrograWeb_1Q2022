@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import { App } from './componentes/App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import { App } from "./componentes/App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { About } from './componentes/About';
-import { Contacto } from './componentes/Contacto';
-import { Layout } from './componentes/Layout';
-import { Login } from './componentes/Login'
-
+import { Example } from "./componentes/About";
+import { Contacto } from "./componentes/Contacto";
+import { Layout } from "./componentes/Layout";
+import { Login } from "./componentes/Login";
+import { obras } from "./componentes/Obras";
 
 /* 
 function Contenido(props) {
@@ -47,23 +47,15 @@ ReactDOM.render(
 */
 
 ReactDOM.render(
-  
   <BrowserRouter>
-    
-      <Routes>
-        <Route path='/' element={<Layout/>}>
-          <Route index element={<App />} />;
-          <Route path="/about" element={<About />} />;
-          <Route path="/contacto" element={<Contacto />} />
-        </Route>
-
-          <Route path="/login" element={<Login />} />
-        
-      </Routes>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<App />} />;
+        <Route path="/contacto" element={<Contacto />} />
+      </Route>
+      <Route path="/about" element={<Example />} />;
+      <Route path="/login" element={<Login />} />
+    </Routes>
   </BrowserRouter>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-
-
-
