@@ -35,6 +35,17 @@ export const Login = () => {
     };
   }
 
+  const usuarioMail = (email) => { //REEVER ESTA FUNCION QUE NO ANDA --> LA IDEA ES QUE TOME LOS CARACTERES DEL MAIL ANTES DE LLEGAR AL @ PARA LUEGO UTILIZARLO COMO NOMBRE DE USUARIO
+    let usuario;
+    for (let i = 0; i < email.length(); i++) {
+      if (email.substr(i, i + 1) !== "@") {
+        usuario = usuario + email.substr(i, i + 1);
+        console.log(usuario)
+      } else {
+        return usuario;
+      }
+    }
+  };
 
   return (
     <div class="Login">
