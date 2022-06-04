@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Example } from "./componentes/About";
 import { Contacto } from "./componentes/Contacto";
 import { Layout } from "./componentes/Layout";
-import { Login } from "./componentes/Login";
+import { Login } from "./componentes/Login/Login";
 import { obras } from "./componentes/Obras";
 
 /* 

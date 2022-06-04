@@ -1,11 +1,39 @@
 import React from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import LogoDecumanus from "../assets/Decumanus.png"
+import { useState } from "react";
+import LogoDecumanus from "../../assets/Decumanus.png"
 
-export function Login() {
+export const Login = () => {
 
-const navigate = useNavigate()
+  const navigate = useNavigate()
+
+  const [email, setEmail] = useState('')
+  const [contraseña, setContraseña] = useState('')
+  const [msjError, setError] = useState(null)
+
+  // Declaramos variable email
+  // Se nos declara una funcion setEmail para actualizar el valor de la variable email
+  // Ejemplo de uso de setEmail -> setEmail('leoscalise@gmail.com')
+
+  const handleLogin = (event) => {
+    event.preventDefault() // Evento que no permite un refresh en la pagina al activar el boton de Login
+    if (email === 'leoscalise@decumanus.com' && contraseña === '12345') {
+      navigate('/')
+      localStorage.setItem('estaLogueado', 'true')
+    } else {
+      console.log(msjError)
+      setError('Email y/o contraseña inválidos')
+      console.log(msjError)
+    }
+  }
+
+  function handleChange(setValue) {
+    return (event) => {
+      setError(null);
+      setValue(event.target.value);
+    };
+  }
 
 
   return (
@@ -38,6 +66,8 @@ const navigate = useNavigate()
                     required
                     class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="Email"
+                    value={email}
+                    onChange={handleChange(setEmail)}
                   />
                 </div>
                 <div>
@@ -52,13 +82,22 @@ const navigate = useNavigate()
                     required
                     class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="Contraseña"
+                    value={contraseña}
+                    onChange={handleChange(setContraseña)}
                   />
                 </div>
               </div>
+              {msjError ? // si msjError no es null, que entre sino que no haga nada
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                  <span class="block sm:inline"> {msjError} </span>
+                </div>
+                :
+                null
+              }
               <div>
                 <button
                   type="submit"
-                  onClick={() => navigate('/')} //La función se llama de esta forma ya que no está bindeada, de otra forma, React al renderizar, ejecutaría una sola vez la función obviando el onClick
+                  onClick={handleLogin} //La función se llama de esta forma ya que no está bindeada, de otra forma, React al renderizar, ejecutaría una sola vez la función obviando el onClick
                   class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   <span class="absolute left-0 inset-y-0 flex items-center pl-3">

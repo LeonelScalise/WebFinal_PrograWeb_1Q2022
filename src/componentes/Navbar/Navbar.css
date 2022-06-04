@@ -5,3 +5,7 @@
     transform: translateY(-3px) scale(1.05);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.botonMenu:focus{
+    outline: none;
+}

@@ -2,25 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { IoIosPerson, IoIosMenu } from 'react-icons/io';
 import { AiOutlinePhone, AiOutlineInfoCircle } from 'react-icons/ai'
-import DecuNavbar from "../assets/DecumanusNavbar.png"
+import { MdOutlineLogout } from 'react-icons/md'
+import DecuNavbar from "../../assets/DecumanusNavbar.png"
 import "./Navbar.css"
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import {
-  BookmarkAltIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorClickIcon,
-  MenuIcon,
-  PhoneIcon,
-  PlayIcon,
-  RefreshIcon,
-  ShieldCheckIcon,
-  SupportIcon,
-  ViewGridIcon,
-  XIcon,
-} from "@heroicons/react/outline";
-import { ChevronDownIcon } from "@heroicons/react/solid";
+import { useNavigate } from 'react-router-dom';
 
 const solutions = [
   {
@@ -35,10 +22,20 @@ const solutions = [
   },
 ];
 
-export function Navbar() {
-  return (
-    <nav className='flex justify-between items-center h-16 bg-sky-200 text-gray-700 relative shadow-sm'>
 
+export function Navbar() {
+  
+  const navigate = useNavigate()
+
+function handleLogOut(){
+  localStorage.setItem('estaLogueado', 'false')
+  navigate('/')
+}
+  
+  
+  return (
+    
+      <nav className='absolute z-10 transform bg-transparent flex justify-between items-center w-screen h-20 bg-sky-200 text-gray-700'>
         <Link to="/">
           <img className='w-26 h-14 sm:pl-4 sm:w-30 sm:h-16 mb-2' src={DecuNavbar} alt="DecuNavbar" />
         </Link>
@@ -49,7 +46,7 @@ export function Navbar() {
         <Popover className="relative">
               {() => (
                 <>
-                  <Popover.Button className='pt-2'>
+                  <Popover.Button className='botonMenu pt-2'>
                     <IoIosMenu
                       className='LoginNavbar rounded-md hover:bg-blue-500 cursor-pointer'
                       size={25}
@@ -93,9 +90,17 @@ export function Navbar() {
               )}
             </Popover>
 
-      <a href='/login' className='LoginNavbar rounded-md hover:bg-blue-500 cursor-pointer'> <IoIosPerson size={25} /> </a>
+      {localStorage.getItem('estaLogueado') === 'true' ? // Operador ternario --> es un IF simplificado
+        <>
+        <p className='font-bold'>LeoScalise</p>
+        <button onClick={() => handleLogOut()} className='LoginNavbar rounded-md hover:bg-blue-500 cursor-pointer'> <MdOutlineLogout size={25} /> </button>
+        </>
+      :
+        <a href='/login' className='LoginNavbar rounded-md hover:bg-blue-500 cursor-pointer'> <IoIosPerson size={25} /> </a>
+      }
 
       </div>
-    </nav>
+      </nav>
+
   );
 }
