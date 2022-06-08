@@ -20,32 +20,21 @@ export const Login = () => {
     event.preventDefault() // Evento que no permite un refresh en la pagina al activar el boton de Login
     if (email === 'leoscalise@decumanus.com' && contraseña === '12345') {
       navigate('/')
+      var usuario = email.split('@')[0]
       localStorage.setItem('estaLogueado', 'true')
+      localStorage.setItem('usuario', usuario)
     } else {
-      console.log(msjError)
       setError('Email y/o contraseña inválidos')
-      console.log(msjError)
     }
   }
 
-  function handleChange(setValue) {
+  function handleChange(setValue) {  // Funcion que detecta los cambios caracter por caracter en el input y los va asignando a la variable que se ponga como parámetro
     return (event) => {
       setError(null);
       setValue(event.target.value);
     };
   }
 
-  const usuarioMail = (email) => { //REEVER ESTA FUNCION QUE NO ANDA --> LA IDEA ES QUE TOME LOS CARACTERES DEL MAIL ANTES DE LLEGAR AL @ PARA LUEGO UTILIZARLO COMO NOMBRE DE USUARIO
-    let usuario;
-    for (let i = 0; i < email.length(); i++) {
-      if (email.substr(i, i + 1) !== "@") {
-        usuario = usuario + email.substr(i, i + 1);
-        console.log(usuario)
-      } else {
-        return usuario;
-      }
-    }
-  };
 
   return (
     <div class="Login">
