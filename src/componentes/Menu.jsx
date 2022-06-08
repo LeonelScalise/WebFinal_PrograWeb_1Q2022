@@ -30,9 +30,7 @@ function classNames(...classes) {
 }
 
 function Menu() {
-  return (
-   <></>
-  );
+  return <></>;
 }
 
 export default Menu;

@@ -1,12 +1,10 @@
-
-.LoginNavbar:hover{
-    color: white;
-    transition: 0.3s;
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.LoginNavbar:hover {
+  color: white;
+  transition: 0.3s;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.botonMenu:focus{
-    outline: none;
+.botonMenu:focus {
+  outline: none;
 }
-

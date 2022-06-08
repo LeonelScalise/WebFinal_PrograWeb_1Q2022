@@ -22,26 +22,13 @@ const solutions = [
   },
 ];
 
-
-export function Navbar({email}) {
+export function Navbar() {
   const navigate = useNavigate();
 
   function handleLogOut() {
     localStorage.setItem("estaLogueado", "false");
     navigate("/");
   }
-
-/*   const usuarioMail = (email) => { //REEVER ESTA FUNCION QUE NO ANDA --> LA IDEA ES QUE TOME LOS CARACTERES DEL MAIL ANTES DE LLEGAR AL @ PARA LUEGO UTILIZARLO COMO NOMBRE DE USUARIO
-    let usuario;
-    for (let i = 0; i < email.length(); i++) {
-      if (email.substr(i, i + 1) !== "@") {
-        usuario = usuario + email.substr(i, i + 1);
-        console.log(usuario)
-      } else {
-        return usuario;
-      }
-    }
-  }; */
 
   return (
     <nav className="absolute z-10 transform bg-transparent flex justify-between items-center bg-opacity-0 w-screen h-28 bg-sky-200 text-gray-700">
@@ -58,7 +45,10 @@ export function Navbar({email}) {
 
         {localStorage.getItem("estaLogueado") === "true" ? ( // Operador ternario --> es un IF simplificado
           <>
-            <p className="font-bold md:mr-6"> {localStorage.getItem('usuario')}</p>
+            <p className="font-bold md:mr-6">
+              {" "}
+              {localStorage.getItem("usuario")}
+            </p>
             <button
               onClick={() => handleLogOut()}
               className="LoginNavbar rounded-md hover:bg-blue-500 cursor-pointer md:mr-6"

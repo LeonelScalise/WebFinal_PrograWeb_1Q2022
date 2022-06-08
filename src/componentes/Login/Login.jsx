@@ -2,39 +2,38 @@ import React from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import LogoDecumanus from "../../assets/Decumanus.png"
+import LogoDecumanus from "../../assets/Decumanus.png";
 
 export const Login = () => {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-
-  const [email, setEmail] = useState('')
-  const [contraseña, setContraseña] = useState('')
-  const [msjError, setError] = useState(null)
+  const [email, setEmail] = useState("");
+  const [contraseña, setContraseña] = useState("");
+  const [msjError, setError] = useState(null);
 
   // Declaramos variable email
   // Se nos declara una funcion setEmail para actualizar el valor de la variable email
   // Ejemplo de uso de setEmail -> setEmail('leoscalise@gmail.com')
 
   const handleLogin = (event) => {
-    event.preventDefault() // Evento que no permite un refresh en la pagina al activar el boton de Login
-    if (email === 'leoscalise@decumanus.com' && contraseña === '12345') {
-      navigate('/')
-      var usuario = email.split('@')[0]
-      localStorage.setItem('estaLogueado', 'true')
-      localStorage.setItem('usuario', usuario)
+    event.preventDefault(); // Evento que no permite un refresh en la pagina al activar el boton de Login
+    if (email === "leoscalise@decumanus.com" && contraseña === "12345") {
+      navigate("/");
+      var usuario = email.split("@")[0];
+      localStorage.setItem("estaLogueado", "true");
+      localStorage.setItem("usuario", usuario);
     } else {
-      setError('Email y/o contraseña inválidos')
+      setError("Email y/o contraseña inválidos");
     }
-  }
+  };
 
-  function handleChange(setValue) {  // Funcion que detecta los cambios caracter por caracter en el input y los va asignando a la variable que se ponga como parámetro
+  function handleChange(setValue) {
+    // Funcion que detecta los cambios caracter por caracter en el input y los va asignando a la variable que se ponga como parámetro
     return (event) => {
       setError(null);
       setValue(event.target.value);
     };
   }
-
 
   return (
     <div class="Login">
@@ -87,13 +86,14 @@ export const Login = () => {
                   />
                 </div>
               </div>
-              {msjError ? // si msjError no es null, que entre sino que no haga nada
-                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              {msjError ? ( // si msjError no es null, que entre sino que no haga nada
+                <div
+                  class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                  role="alert"
+                >
                   <span class="block sm:inline"> {msjError} </span>
                 </div>
-                :
-                null
-              }
+              ) : null}
               <div>
                 <button
                   type="submit"
@@ -124,4 +124,4 @@ export const Login = () => {
       </div>
     </div>
   );
-}
+};
