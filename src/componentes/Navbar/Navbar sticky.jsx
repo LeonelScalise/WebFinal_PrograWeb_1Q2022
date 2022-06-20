@@ -32,7 +32,7 @@ export function Navbarst() {
 
   return (
     <nav className="absolute transform z-10 flex justify-center items-center sticky top-4 h-16 w-full">
-      <div className="flex justify-between items-center shadow w-11/12 h-16 bg-white text-gray-700">
+      <div className="flex justify-between items-center w-11/12 h-16 bg-white text-gray-700">
         <Link to="/">
           <img
             className="w-26 h-14 sm:pl-4 sm:w-30 sm:h-16 mb-2 md:ml-32"

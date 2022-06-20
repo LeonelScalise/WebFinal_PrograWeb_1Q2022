@@ -8,6 +8,7 @@ import "./Navbar.css";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { useNavigate } from "react-router-dom";
+import { usePosicionScroll } from "../../Hooks/usePosicionScroll";
 
 const solutions = [
   {
@@ -30,8 +31,12 @@ export function Navbar() {
     navigate("/");
   }
 
+  const posicionScroll = usePosicionScroll();
+
   return (
-    <nav className="absolute z-10 transform bg-transparent flex justify-between items-center w-full h-28 text-gray-700">
+ 
+   <nav className={`text-gray-700 w-full z-10 ${(posicionScroll > 50) ? "flex justify-center items-center fixed top-4 h-16 m-auto" : "absolute bg-transparent h-28"}`}>
+     <div className={`flex justify-between items-center ${(posicionScroll > 50) ? "w-11/12 bg-white  rounded-sm" : ""}`} >
       <Link to="/">
         <img  
           className="w-26 h-14 sm:pl-4 sm:w-30 sm:h-16 mb-2 md:ml-32"
@@ -112,6 +117,7 @@ export function Navbar() {
             </>
           )}
         </Popover>
+      </div>
       </div>
     </nav>
   );
