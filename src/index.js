@@ -51,8 +51,9 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<App />} />;
-        <Route path="/contacto" element={<Contacto />} />
+        
       </Route>
+      <Route path="/contacto" element={<Contacto />} />
       <Route path="/about" element={<Example />} />;
       <Route path="/login" element={<Login />} />
     </Routes>

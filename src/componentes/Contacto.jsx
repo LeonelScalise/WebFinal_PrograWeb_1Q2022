@@ -1,7 +1,53 @@
+import React from "react";
+import { Navbarst } from "./Navbar/Navbar sticky";
+
+
 export function Contacto () {
     return (
-    <div className="bg-yellow-200">Contacto</div>
+    <><Navbarst />
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    <p>HOLA COMO</p>
+    
+
+    
+    </>
+    
     );
 }
-
-export default Contacto();

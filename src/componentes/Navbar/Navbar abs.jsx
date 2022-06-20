@@ -31,9 +31,9 @@ export function Navbar() {
   }
 
   return (
-    <nav className="absolute z-10 transform bg-transparent flex justify-between items-center bg-opacity-0 w-screen h-28 bg-sky-200 text-gray-700">
+    <nav className="absolute z-10 transform bg-transparent flex justify-between items-center w-full h-28 text-gray-700">
       <Link to="/">
-        <img
+        <img  
           className="w-26 h-14 sm:pl-4 sm:w-30 sm:h-16 mb-2 md:ml-32"
           src={DecuNavbar}
           alt="DecuNavbar"
