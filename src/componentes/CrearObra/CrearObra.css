@@ -1,0 +1,10 @@
+.CrearObra{
+    background-image: url("https://cdn.pixabay.com/photo/2014/06/17/16/53/blueprint-370588_960_720.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -20,8 +20,8 @@ export const Login = () => {
     if (email === "leoscalise@decumanus.com" && contraseña === "12345") {
       navigate("/");
       var usuario = email.split("@")[0];
-      localStorage.setItem("estaLogueado", "true");
-      localStorage.setItem("usuario", usuario);
+      sessionStorage.setItem("estaLogueado", "true");
+      sessionStorage.setItem("usuario", usuario);
     } else {
       setError("Email y/o contraseña inválidos");
     }

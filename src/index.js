@@ -8,6 +8,7 @@ import { Contacto } from "./componentes/Contacto";
 import { Layout } from "./componentes/Layout";
 import { Login } from "./componentes/Login/Login";
 import { obras } from "./componentes/Obras";
+import { CrearObra } from "./componentes/CrearObra/CrearObra";
 
 /* 
 function Contenido(props) {
@@ -56,8 +57,9 @@ ReactDOM.render(
         
       </Route>
       <Route path="/contacto" element={<Contacto />} />
-      <Route path="/about" element={<Example />} />;
+      <Route path="/about" element={<Example />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/crearObra" element={<CrearObra />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

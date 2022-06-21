@@ -27,7 +27,7 @@ export function Navbar() {
   const navigate = useNavigate();
 
   function handleLogOut() {
-    localStorage.setItem("estaLogueado", "false");
+    sessionStorage.setItem("estaLogueado", "false");
     navigate("/");
   }
 
@@ -48,11 +48,11 @@ export function Navbar() {
         <div className="flex justify-between items-center w-20 sm:w-24 md:w-36 pr-4 sm:pr-8 md:pr-20 md:mr-20">
           {/* <a href='/About' className='LoginNavbar rounded-md hover:bg-blue-500'> <IoIosMenu size={25} /> </a> */}
 
-          {localStorage.getItem("estaLogueado") === "true" ? ( // Operador ternario --> es un IF simplificado
+          {sessionStorage.getItem("estaLogueado") === "true" ? ( // Operador ternario --> es un IF simplificado
             <>
               <p className="font-bold md:mr-6">
                 {" "}
-                {localStorage.getItem("usuario")}
+                {sessionStorage.getItem("usuario")}
               </p>
               <button
                 onClick={() => handleLogOut()}
