@@ -20,19 +20,19 @@ export function App() {
         interval={3000}
         infiniteLoop={true}
       >
-        <div class="w-full bg-gradient-to-r from-blue-800">
-          <img src={Carousel1} alt="" class="w-full bg-gradient-to-r from-blue-500" />
-        </div>
-        <div class="w-full">
-          <img src={Carousel2} alt="" style={{
-            maskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,20) 100%)',
-            webkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,20) 100%)'
+        <div class="w-full bg-gradient-to-r from-blue-400 to-blue-800">
+          <img src={Carousel1} alt="" style={{
+            webkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,20) 80%)'
           }} />
         </div>
-        <div class="w-full">
+        <div class="w-full bg-gradient-to-r from-blue-400 to-blue-800">
+          <img src={Carousel2} alt="" style={{
+            webkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,20) 80%)'
+          }} />
+        </div>
+        <div class="w-full bg-gradient-to-r from-blue-400 to-blue-800">
           <img src={Carousel3} alt="" style={{
-            maskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,20) 100%)',
-            webkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,20) 100%)'
+            webkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,20) 80%)'
           }} />
         </div>
       </Carousel>

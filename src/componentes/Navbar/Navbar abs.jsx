@@ -35,8 +35,8 @@ export function Navbar() {
 
   return (
 
-    <nav className={`text-gray-700 w-full z-10 ${(posicionScroll > 50) ? "flex justify-center items-center fixed top-4 h-16 m-auto" : "absolute bg-transparent h-28"}`}>
-      <div className={`flex justify-between items-center ${(posicionScroll > 50) ? "w-11/12 bg-white rounded-sm" : ""}`} >
+    <nav className={`text-gray-700 w-full font-sans z-10 ${(posicionScroll > 50) ? "flex justify-center items-center fixed top-4 h-16 m-auto " : "absolute bg-transparent h-28"}`}>
+      <div className={`flex justify-between items-center ${(posicionScroll > 50) ? "w-11/12 bg-white rounded-sm shadow-xl bg-gradient-to-r from-cyan-500 to-blue-500 " : ""}`} >
         <Link to="/">
           <img
             className="w-26 h-14 sm:pl-4 sm:w-30 sm:h-16 mb-2 md:ml-32"

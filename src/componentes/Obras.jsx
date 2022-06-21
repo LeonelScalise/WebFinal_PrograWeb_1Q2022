@@ -24,13 +24,20 @@ export function Obras() {
   useEffect(() => { obras = obrasAlmacenadas() })
 
   return (
-
+    <>
+    <div className='border-b-2 border-blue-300 font-bold font-sans shadow-lg shadow-blue-300/50 text-2xl text-blue-400 mt-5 p-2 pl-5'>
+      Nuestras obras
+    </div>
     <div className='flex flex-col mx-auto align-center w-9/12'>
-      <button class="flex justify-center self-end w-36 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold mt-6 item-end hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={irAPaginaDeCrearObra}>Agregar obra</button>
+      {sessionStorage.getItem("estaLogueado") === "true" ?
+        <button class="flex justify-center self-end w-36 bg-transparent hover:bg-blue-400 text-blue-700 font-semibold mt-6 item-end hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={irAPaginaDeCrearObra}>Agregar obra</button>
+        : null
+      }
       {obras && obras.map(obra => {
         return (<Obra id={obra.id} titulo={obra.titulo} descripcion={obra.descripcion} imagen={obra.imagen} fechaDeFin={obra.fechaDeFin} borrarObra={borrarObraConId} />)
       })}
 
     </div>
+    </>
   )
 }
