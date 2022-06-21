@@ -36,7 +36,7 @@ export const Obra = ({ id, titulo, descripcion, imagen, fechaDeFin, borrarObra }
 
     return (
         <div className='flex-wrap flex md:flex-nowrap gap-10 justify-center border-b-2 bg-blue-100 border-gray-400 shadow-lg my-3 mx-auto w-full p-4'>
-            <img src={imagen} className="w-full md:w-2/4 shadow-xl hover:opacity-70" alt='imagen-de-una-obra.png' />
+            <img src={imagen} className="w-full md:w-2/5 shadow-xl hover:opacity-70" alt='imagen-de-una-obra.png' />
             <div className="w-full font-sans p-2">
                 <div className='flex flex-row justify-between'>
                     <h1 className="text-xl font-bold">{titulo}</h1>
