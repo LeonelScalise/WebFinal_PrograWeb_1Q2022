@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { IoIosPerson, IoIosMenu } from "react-icons/io";
 import { AiOutlinePhone, AiOutlineInfoCircle } from "react-icons/ai";
 import { MdOutlineLogout } from "react-icons/md";
-import DecuNavbar from "../../assets/DecumanusNavbar.png";
+import DecuNavbar from "../../assets/DecumanusNavFoot.png";
 import "./Navbar.css";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
@@ -36,27 +36,25 @@ export function Navbar() {
   return (
 
     <nav className={`text-gray-700 w-full font-sans z-10 ${(posicionScroll > 50) ? "flex justify-center items-center fixed top-4 h-16 m-auto " : "absolute bg-transparent h-28"}`}>
-      <div className={`flex justify-between items-center ${(posicionScroll > 50) ? "w-11/12 bg-white rounded-sm shadow-xl bg-gradient-to-r from-cyan-500 to-blue-500 " : ""}`} >
+      <div className={`flex flex-wrap sm:flex-nowrap justify-between items-center ${(posicionScroll > 50) ? "w-11/12 bg-white rounded-sm shadow-xl bg-gradient-to-r from-blue-400 to-cyan-300 " : ""}`} >
         <Link to="/">
           <img
-            className="w-26 h-14 sm:pl-4 sm:w-30 sm:h-16 mb-2 md:ml-32"
+            className="w-26 h-14 mr-6 sm:pl-4 sm:w-30 sm:h-16 mb-2 md:ml-32"
             src={DecuNavbar}
             alt="DecuNavbar"
           />
         </Link>
 
-        <div className="flex justify-between items-center w-20 sm:w-24 md:w-36 pr-4 sm:pr-8 md:pr-20 md:mr-20">
-          {/* <a href='/About' className='LoginNavbar rounded-md hover:bg-blue-500'> <IoIosMenu size={25} /> </a> */}
+        <div className="flex justify-center items-center w-20 mr-10 sm:mr-20 sm:w-24 md:w-36 pr-4 sm:pr-8 md:pr-20 md:mr-20">
 
           {sessionStorage.getItem("estaLogueado") === "true" ? ( // Operador ternario --> es un IF simplificado
             <>
-              <p className="font-bold md:mr-6">
-                {" "}
+              <p className="font-bold mr-2 sm:mr-4 md:mr-6">
                 {sessionStorage.getItem("usuario")}
               </p>
               <button
                 onClick={() => handleLogOut()}
-                className="LoginNavbar rounded-md hover:bg-blue-500 cursor-pointer md:mr-6"
+                className="LoginNavbar rounded-md hover:bg-blue-500 cursor-pointer mr-2 sm:mr-4 md:mr-6"
               >
                 {" "}
                 <MdOutlineLogout size={30} />{" "}
@@ -65,7 +63,7 @@ export function Navbar() {
           ) : (
             <a
               href="/login"
-              className="LoginNavbar rounded-md hover:bg-blue-500 cursor-pointer md:mr-6"
+              className="LoginNavbar rounded-md hover:bg-blue-500 cursor-pointer mr-2 sm:mr-4 md:mr-6"
             >
               {" "}
               <IoIosPerson size={30} />{" "}

@@ -4,15 +4,17 @@ import Carousel3 from "../assets/Carousel3.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Obras } from "./Obras";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import React from "react";
 import { inicializarObrasSiNoEstaLaClaveEnLocalStorage }  from "../funciones/funcionesDeObras"
+import { Footer } from "./Footer";
+
 export function App() {
 
   useEffect(() => {inicializarObrasSiNoEstaLaClaveEnLocalStorage()}, []);
 
   return ( // Siempre hay que retornar un componente
-    <>
+    <div className="h-full bg-blue-200">
       <Carousel
         showThumbs={false}
         showStatus={false}
@@ -37,8 +39,8 @@ export function App() {
         </div>
       </Carousel>
       
-      
       <Obras/>
-    </>
+      <Footer/>
+    </div>
   );
 }
