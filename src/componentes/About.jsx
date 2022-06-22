@@ -10,6 +10,5 @@ export function About() {
         </p>
       </div>
     </div>
-
   );
 }

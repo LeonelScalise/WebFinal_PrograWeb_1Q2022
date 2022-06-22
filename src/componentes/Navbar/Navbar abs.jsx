@@ -10,7 +10,7 @@ import { Popover, Transition } from "@headlessui/react";
 import { useNavigate } from "react-router-dom";
 import { usePosicionScroll } from "../../Hooks/usePosicionScroll";
 
-const solutions = [
+const contenidoMenu = [
   {
     name: "Contacto",
     href: "./Contacto",
@@ -34,19 +34,29 @@ export function Navbar() {
   const posicionScroll = usePosicionScroll();
 
   return (
-
-    <nav className={`text-gray-700 w-full font-sans z-10 ${(posicionScroll > 50) ? "flex justify-center items-center fixed top-4 h-16 m-auto " : "absolute bg-transparent h-28"}`}>
-      <div className={`flex flex-wrap sm:flex-nowrap justify-between items-center ${(posicionScroll > 50) ? "w-11/12 bg-white rounded-sm shadow-xl bg-gradient-to-r from-blue-400 to-cyan-300 " : ""}`} >
+    <nav
+      className={`text-gray-700 w-full font-sans z-10 ${
+        posicionScroll > 50
+          ? "flex justify-center items-center fixed top-4 h-16 m-auto "
+          : "absolute bg-transparent h-28"
+      }`}
+    >
+      <div
+        className={`flex flex-wrap sm:flex-nowrap justify-between items-center ${
+          posicionScroll > 50
+            ? "w-11/12 bg-white rounded-sm shadow-xl bg-gradient-to-r from-blue-400 to-cyan-300 "
+            : ""
+        }`}
+      >
         <Link to="/">
           <img
-            className="w-26 h-14 mr-6 sm:pl-4 sm:w-30 sm:h-16 mb-2 md:ml-32"
+            className="w-26 h-14 mr-6 sm:pl-4 sm:w-30 sm:h-16 mb-2 md:ml-32 mx-auto"
             src={DecuNavbar}
             alt="DecuNavbar"
           />
         </Link>
 
-        <div className="flex justify-center items-center w-20 mr-10 sm:mr-20 sm:w-24 md:w-36 pr-4 sm:pr-8 md:pr-20 md:mr-20">
-
+        <div className="flex justify-center items-center w-20 mr-10 sm:mr-20 sm:w-24 md:w-36 pr-4 sm:pr-8 md:pr-20 md:mr-20 mx-auto">
           {sessionStorage.getItem("estaLogueado") === "true" ? ( // Operador ternario --> es un IF simplificado
             <>
               <p className="font-bold mr-2 sm:mr-4 md:mr-6">
@@ -88,10 +98,10 @@ export function Navbar() {
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-1"
                 >
-                  <Popover.Panel className="absolute z-10 -ml-52 mt-1 transform px-2 w-screen max-w-md sm:px-0 lg:w-64 ">
+                  <Popover.Panel className="absolute z-10 -ml-32 w-52 md:-ml-52 mt-1 transform px-2 w-screen max-w-md sm:px-0 lg:w-64 ">
                     <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                       <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                        {solutions.map((item) => (
+                        {contenidoMenu.map((item) => (
                           <a
                             key={item.name}
                             href={item.href}

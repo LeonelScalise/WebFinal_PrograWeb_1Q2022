@@ -8,15 +8,12 @@ import { Contacto } from "./componentes/Contacto";
 import { Layout } from "./componentes/Layout";
 import { Login } from "./componentes/Login/Login";
 import { CrearObra } from "./componentes/CrearObra/CrearObra";
-import { Footer } from "./componentes/Footer";
-
 
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<App />} />;
-        
       </Route>
       <Route path="/contacto" element={<Contacto />} />
       <Route path="/about" element={<About />} />

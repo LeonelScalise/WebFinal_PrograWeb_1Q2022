@@ -6,14 +6,16 @@ import { Carousel } from "react-responsive-carousel";
 import { Obras } from "./Obras";
 import { useEffect } from "react";
 import React from "react";
-import { inicializarObrasSiNoEstaLaClaveEnLocalStorage }  from "../funciones/funcionesDeObras"
+import { inicializarObrasSiNoEstaLaClaveEnLocalStorage } from "../funciones/funcionesDeObras";
 import { Footer } from "./Footer";
 
 export function App() {
+  useEffect(() => {
+    inicializarObrasSiNoEstaLaClaveEnLocalStorage();
+  }, []);
 
-  useEffect(() => {inicializarObrasSiNoEstaLaClaveEnLocalStorage()}, []);
-
-  return ( // Siempre hay que retornar un componente
+  return (
+    // Siempre hay que retornar un componente
     <div className="h-full bg-blue-200">
       <Carousel
         showThumbs={false}
@@ -23,24 +25,39 @@ export function App() {
         infiniteLoop={true}
       >
         <div class="w-full bg-gradient-to-r from-blue-400 to-blue-800">
-          <img src={Carousel1} alt="" style={{
-            webkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,20) 80%)'
-          }} />
+          <img
+            src={Carousel1}
+            alt=""
+            style={{
+              webkitMaskImage:
+                "linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,20) 80%)",
+            }}
+          />
         </div>
         <div class="w-full bg-gradient-to-r from-blue-400 to-blue-800">
-          <img src={Carousel2} alt="" style={{
-            webkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,20) 80%)'
-          }} />
+          <img
+            src={Carousel2}
+            alt=""
+            style={{
+              webkitMaskImage:
+                "linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,20) 80%)",
+            }}
+          />
         </div>
         <div class="w-full bg-gradient-to-r from-blue-400 to-blue-800">
-          <img src={Carousel3} alt="" style={{
-            webkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,20) 80%)'
-          }} />
+          <img
+            src={Carousel3}
+            alt=""
+            style={{
+              webkitMaskImage:
+                "linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,20) 80%)",
+            }}
+          />
         </div>
       </Carousel>
-      
-      <Obras/>
-      <Footer/>
+
+      <Obras />
+      <Footer />
     </div>
   );
 }
